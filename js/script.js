@@ -10,7 +10,6 @@ const snakeWidth = bodySnake[0].offsetWidth;
 const snakeHeight = bodySnake[0].offsetHeight;
 
 const maxWidth = containerGame.offsetWidth - snakeWidth;
-console.log(maxWidth);
 const maxHeight = containerGame.offsetWidth - snakeHeight;
 
 
@@ -26,8 +25,13 @@ let downPress = false;
 let leftPress = false;
 let upPress = false;
 
+let tailTop = 0;
+let tailLeft = 0;
+
 let headTop = 0;
-let heatLeft = 0;
+let headLeft = 0;
+
+let haveLose = false;
 
 let gameStarted = false;
 
@@ -44,7 +48,7 @@ window.addEventListener("keydown", (event) => {
         moveRight();
         
 
-        timeRight = setInterval(moveRight, 500)
+        timeRight = setInterval(moveRight, 500);
 
     }
 
@@ -58,7 +62,7 @@ window.addEventListener("keydown", (event) => {
         moveDown();
         
 
-        timeDown = setInterval(moveDown, 500)
+        timeDown = setInterval(moveDown, 500);
 
     }
 
@@ -72,7 +76,7 @@ window.addEventListener("keydown", (event) => {
         
         moveLeft();
 
-        timeLeft = setInterval(moveLeft, 500)
+        timeLeft = setInterval(moveLeft, 500);
 
     }
 
@@ -85,7 +89,7 @@ window.addEventListener("keydown", (event) => {
         upPress = true;
         moveUp();
 
-        timeUp = setInterval(moveUp, 500)
+        timeUp = setInterval(moveUp, 500);
 
     }
 });
