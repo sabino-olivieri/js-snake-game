@@ -8,9 +8,23 @@ function createPoint() {
 
     const pointElem = document.createElement("div");
     pointElem.classList.add("point");
+    let positionOK = true;
+    let pointTop, pointLeft;
+    
+    do{
 
-    const pointTop = Math.floor(Math.random() * (maxHeight / snakeHeight)) * snakeHeight;
-    const pointLeft = Math.floor(Math.random() * (maxWidth / snakeWidth)) * snakeWidth;
+        pointTop = Math.floor(Math.random() * (maxHeight / snakeHeight)) * snakeHeight;
+        pointLeft = Math.floor(Math.random() * (maxWidth / snakeWidth)) * snakeWidth;
+
+        bodySnake.forEach(element => {
+            if(element.offsetTop === pointTop && element.offsetLeft === pointLeft) {
+                positionOK = false;
+            }
+        });
+
+    } while (!positionOK);
+
+
     pointElem.style.left = pointLeft + "px";
     pointElem.style.top = pointTop + "px";
     containerGame.append(pointElem);
