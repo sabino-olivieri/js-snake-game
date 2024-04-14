@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    height: 10%;
+    width: 90%;
+    text-align: center;
+}
+
+.container-game {
+    margin: 0 auto;
+    /* height: 80%; */
+    max-height: 600px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid grey;
+    position: relative;
+}
+
+.snake {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    background-color: green;
+    border-radius: 10%;
+    position: absolute;
+    
+}
+
+.snake-body {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(128, 0, 0);
+    border-radius: 10%;
+    position: absolute;
+    
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.point {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
