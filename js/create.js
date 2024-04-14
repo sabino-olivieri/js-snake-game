@@ -8,16 +8,18 @@ function createPoint() {
 
     const pointElem = document.createElement("div");
     pointElem.classList.add("point");
-    let positionOK = true;
+    let positionOK;
+    
     let pointTop, pointLeft;
     
     do{
 
+        positionOK = true;
         pointTop = Math.floor(Math.random() * (maxHeight / snakeHeight)) * snakeHeight;
         pointLeft = Math.floor(Math.random() * (maxWidth / snakeWidth)) * snakeWidth;
-
         bodySnake.forEach(element => {
             if(element.offsetTop === pointTop && element.offsetLeft === pointLeft) {
+                console.log("posizione uguale");
                 positionOK = false;
             }
         });
