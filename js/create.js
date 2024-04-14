@@ -29,3 +29,31 @@ function createBody() {
     containerGame.append(bodyElem);
 
 }
+
+function createMessage() {
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.innerHTML = `<h2>Hai perso</h2>
+    Hai realizzato ${bodySnake.length - 1} punti.`
+    containerGame.append(message);
+    startElem.classList.add("opacity0");
+    newGameElem.classList.remove("opacity0");
+}
+
+function newGame() {
+    startElem.classList.remove("opacity0");
+    newGameElem.classList.add("opacity0");
+    haveLose = false;
+    gameStarted = false;
+
+    bodySnake.forEach(element => {
+        element.remove();
+    });
+
+    resetPress();
+    document.querySelector(".message").remove();
+    document.querySelector(".point").remove();
+    bodySnake = [];
+    createSnake();
+    bodySnake.push(document.querySelector(".snake"));
+}

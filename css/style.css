@@ -6,6 +6,7 @@
 
 body {
     background-color: lightgray;
+    font-family: sans-serif;
 }
 
 .wrapper {
@@ -14,9 +15,21 @@ body {
 
 .container {
     margin: 0 auto;
+    padding: 10px;
     height: 10%;
     width: 90%;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.btn {
+    border: 0;
+    padding: 10px;
+    background-color: #006aae;
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 1s;
 }
 
 .container-game {
@@ -34,8 +47,7 @@ body {
     aspect-ratio: 1 / 1;
     background-image: url(../img/snake.png);
     position: absolute;
-    z-index: 9999;
-    
+    z-index: 2222;
 }
 
 .snake-body {
@@ -48,6 +60,10 @@ body {
 
 .opacity0 {
     opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .point {
@@ -56,4 +72,17 @@ body {
     background-image: url(../img/fruit.png);
     position: absolute;
     z-index: 1;
+}
+
+.message {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 1s;
+    z-index: 9999;
+    background-color: white;
+    width: 100%;
+    text-align: center;
 }

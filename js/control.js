@@ -9,16 +9,20 @@ function resetPress() {
 function resetTime() {
 
     if (rightPress) {
-        clearInterval(timeRight);    }
+        clearInterval(timeRight);
+    }
 
     if (leftPress) {
-        clearInterval(timeLeft);    }
+        clearInterval(timeLeft);
+    }
 
     if (downPress) {
-        clearInterval(timeDown);    }
+        clearInterval(timeDown);
+    }
 
     if (upPress) {
-        clearInterval(timeUp);    }
+        clearInterval(timeUp);
+    }
 
 }
 
@@ -37,18 +41,22 @@ function removePoint() {
 function collision() {
     const pointElem = document.querySelector(".point");
 
-    for (let i = 1; i < bodySnake.length; i++) {
+    if (bodySnake.length > 1) {
+        for (let i = 1; i < bodySnake.length; i++) {
 
-        if (bodySnake[0].offsetTop === bodySnake[i].offsetTop && bodySnake[0].offsetLeft === bodySnake[i].offsetLeft) {
+            if (bodySnake[0].offsetTop === bodySnake[i].offsetTop && bodySnake[0].offsetLeft === bodySnake[i].offsetLeft) {
 
-            console.log("hai perso");
-            haveLose = true;
-            resetTime();
+                console.log("hai perso");
+                haveLose = true;
+                resetTime();
 
-            gameStarted = false;
-            clearTimeout(timeout);
+                gameStarted = false;
+                clearTimeout(timeout);
 
-            break;
+                createMessage();
+
+                break;
+            }
         }
     }
 

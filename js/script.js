@@ -2,9 +2,10 @@ const containerGame = document.querySelector(".container-game");
 
 createSnake();
 const snakeElem = document.querySelector(".snake");
-const bodySnake= [];
+let bodySnake = [];
 bodySnake.push(snakeElem);
 const startElem = document.querySelector(".start-btn");
+const newGameElem = document.querySelector(".new-game");
 
 const snakeWidth = bodySnake[0].offsetWidth;
 const snakeHeight = bodySnake[0].offsetHeight;
@@ -100,4 +101,8 @@ startElem.addEventListener("click", () => {
         createPoint();
     }
     gameStarted = true;
+});
+
+newGameElem.addEventListener("click", () => {
+    newGame();
 });
