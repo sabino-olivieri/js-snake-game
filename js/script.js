@@ -38,7 +38,8 @@ let gameStarted = false;
 
 window.addEventListener("keydown", (event) => {
     const keyPress = event.code;
-
+    console.log(keyPress);
+    
     // freccia destra
     if (keyPress === "ArrowRight" && !rightPress && !leftPress && gameStarted) {
 
@@ -97,10 +98,20 @@ window.addEventListener("keydown", (event) => {
 
 startElem.addEventListener("click", () => {
     if(!gameStarted){
-
         createPoint();
+        gameStarted = true;
+        const rightArrowEvent = new KeyboardEvent('keydown', {
+            key: 'ArrowRight',
+            keyCode: 39,
+            code: 'ArrowRight',
+            which: 39,
+            bubbles: true
+        });
+    
+        document.dispatchEvent(rightArrowEvent);
     }
-    gameStarted = true;
+    
+    
 });
 
 newGameElem.addEventListener("click", () => {
